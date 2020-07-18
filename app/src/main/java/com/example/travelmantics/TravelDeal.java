@@ -3,14 +3,16 @@ package com.example.travelmantics;
 import java.io.Serializable;
 
 public class TravelDeal implements Serializable {
+    //was this Id removed in the final parts of Simone's lecture?
     private String id;
     private String title;
     private String description;
     private String price;
     private String imageUrl;
 
-    public TravelDeal () {}
+    public TravelDeal () {};
 
+    //String Id is missing here
     public TravelDeal( String title, String description, String price, String imageUrl) {
         this.setId(id);
         this.setTitle(title);

@@ -7,7 +7,7 @@
     <string name="new_travel_deal">New Travel Deal</string>
     <string name="delete_deal">delete deal</string>
     <string name="imadge_deal_content_image">imageDealContentImage</string>
-    <string name="tv_title_name">tvTileName</string>
+    <string name="tv_title_name">tvTitleName</string>
     <string name="textview_Price">TextView Price</string>
     <string name="textview_Description">TextView Description</string>
 </resources>

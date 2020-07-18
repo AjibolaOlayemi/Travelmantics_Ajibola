@@ -91,7 +91,7 @@ public class DealActivity extends AppCompatActivity {
 
     private void deleteDeal (){
         if (deal == null){
-            Toast.makeText(this, "Please svae the deal before deleting", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please save the deal before deleting", Toast.LENGTH_SHORT).show();
             return;
         }
         //remove Value removes object from database
