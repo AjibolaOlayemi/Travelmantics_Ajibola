@@ -39,14 +39,19 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
 
            @Override
            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-               TravelDeal td = dataSnapshot.getValue(TravelDeal.class);
-               assert td != null;
-               Log.d("Deal", td.getTitle());
-               td.setId(dataSnapshot.getKey());
-               deals.add(td);
-               notifyItemInserted(deals.size() - 1);
-               notifyDataSetChanged();
-
+             //this if statement checks if  nested
+              if (dataSnapshot.child("title").exists()
+                      && dataSnapshot.child("description").exists()
+                      && dataSnapshot.child("price").exists()
+                      && dataSnapshot.child("imageUrl").exists()) {
+                 TravelDeal td = dataSnapshot.getValue(TravelDeal.class);
+                assert td != null;
+                 Log.d("Deal", td.getTitle());
+                td.setId(dataSnapshot.getKey());
+                 deals.add(td);
+                 notifyItemInserted(deals.size() - 1);
+                 notifyDataSetChanged();
+             }
            }
 
            @Override
@@ -122,7 +127,7 @@ public class DealAdapter extends RecyclerView.Adapter<DealAdapter.DealViewHolder
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
             tvDescription = (TextView) itemView.findViewById(R.id.tvDescription);
             tvPrice = (TextView) itemView.findViewById(R.id.tvPrice);
-            itemView.setOnClickListener(this);
+          //  itemView.setOnClickListener(this);
         }
         public void bind (TravelDeal deal) {
             tvTitle.setText(deal.getTitle());

@@ -79,7 +79,7 @@ public class DealActivity extends AppCompatActivity {
         deal.setTitle(txtTitle.getText().toString());
         deal.setDescription(txtDescription.getText().toString());
         deal.setPrice(txtPrice.getText().toString());
-        if (deal.getId()==null) {
+        if (deal.getId()==null)  {
 
             //setValue adds an object to database
             mDatabaseReference.push().setValue(deal);
@@ -91,7 +91,8 @@ public class DealActivity extends AppCompatActivity {
 
     private void deleteDeal (){
         if (deal == null){
-            Toast.makeText(this, "Please save the deal before deleting", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please save the deal before deleting",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
         //remove Value removes object from database
